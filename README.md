@@ -3,7 +3,14 @@ Code for deriving spouse-pairs in UK Biobank
 
 <b>Input</b>
 
-Assuming a data-set containing variables in the following order (UK Biobank Field IDs):
+Assuming two data-sets containing variables in the following order (UK Biobank Field IDs):
+
+a) input1.txt <br>
+
+UK Biobank ID (0-0.0) <br>
+How are people in household related to participant (6141) <b> NOTE: There are multiple columns for this question </b> <br>
+
+b) input2.txt <br>
 
 UK Biobank ID (0-0.0) <br>
 Sex (31-0.0) <br>
@@ -18,7 +25,6 @@ Father still alive (1797-0.0) <br>
 Fathers age at death (1807-0.0) <br>
 Mother still alive (1835-0.0) <br>
 Mothers age at death (1845-0.0) <br>
-How are people in household related to participant (6141) <b> NOTE: There should be up to 15 columns for this question </b> <br>
 Home coordinates East-West (nearest km) (20074-0.0) <br>
 Home coordinates North-South (nearest km) (20075-0.0) <br>
 
