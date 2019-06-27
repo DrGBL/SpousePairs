@@ -18,7 +18,7 @@ Father still alive (1797-0.0) <br>
 Fathers age at death (1807-0.0) <br>
 Mother still alive (1835-0.0) <br>
 Mothers age at death (1845-0.0) <br>
-How are people in household related to participant (6141-0.0) <br>
+How are people in household related to participant (6141) <br>
 Home coordinates East-West (nearest km) (20074-0.0) <br>
 Home coordinates North-South (nearest km) (20075-0.0) <br>
 
