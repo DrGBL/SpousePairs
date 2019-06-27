@@ -5,12 +5,12 @@ Code for deriving spouse-pairs in UK Biobank
 
 Assuming two data-sets containing variables in the following order (UK Biobank Field IDs):
 
-a) input1.txt <br>
+a) file1: tab delimited file containing: <br>
 
 UK Biobank ID (0-0.0) <br>
 How are people in household related to participant (6141) <b> NOTE: There are multiple columns for this question </b> <br>
 
-b) input2.txt <br>
+b) file2: tab delimited file containing: <br>
 
 UK Biobank ID (0-0.0) <br>
 Sex (31-0.0) <br>
@@ -27,5 +27,7 @@ Mother still alive (1835-0.0) <br>
 Mothers age at death (1845-0.0) <br>
 Home coordinates East-West (nearest km) (20074-0.0) <br>
 Home coordinates North-South (nearest km) (20075-0.0) <br>
+
+c) Genetic data <br>
 
 <b> Output </b>
