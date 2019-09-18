@@ -57,7 +57,8 @@ duplicates2df <- sex[duplicated(sex),]
 merge3 <- merge2[which(! merge2$Couple %in% duplicates2df$Couple), ]
 
 #Output as preliminary couples
-write.table(merge3, "preliminary-spouse-pairs.txt", quote=F, row.names=F)
+output<- data.table(FID=merge3$Couple, IID=merge3$ID)
+write.table(output, "preliminary-spouse-pairs.txt", quote=F, row.names=F)
 
 
 
