@@ -24,13 +24,23 @@ Number of vehicles in household (728-0.0) <br>
 Home coordinates East-West (nearest km) (20074-0.0) <br>
 Home coordinates North-South (nearest km) (20075-0.0) <br>
 
+<b> Output </b>
+
+A list of believed to be partners identified by having a common FID.
+
+> FID IID <br>
+> 1   10000 <br>
+> 1   15202 <br>
+> 2   765 <br>
+> 2   940 <br>
+
 <b> Next step </b>
 
-We recommend using genetic data to remove preliminary pairs which are closely related. This can be done using PLINK, see an example below!
+We recommend using genetic data to remove preliminary pairs which are closely related. This can be done using PLINK, see an example below which will calculate relatedness for individuals with the same FID. 
 
 > plink \ <br>
 >	--bfile spouse_data \ <br>
->	--extract hm3_snplist.txt \ <br>
+>	--extract snplist.txt \ <br>
 >	--genome \ <br>
 >	--rel-check \ <br>
 >	--out rel <br>
