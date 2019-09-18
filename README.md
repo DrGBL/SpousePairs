@@ -28,9 +28,9 @@ Home coordinates North-South (nearest km) (20075-0.0) <br>
 
 We recommend using genetic data to remove preliminary pairs which are closely related. This can be done using PLINK, see an example below!
 
-plink \ <br>
-	--bfile spouse_data \ <br>
-	--extract hm3_snplist.txt \ <br>
-	--genome \ <br>
-	--rel-check \ <br>
-	--out rel <br>
+> plink \ <br>
+>	--bfile spouse_data \ <br>
+>	--extract hm3_snplist.txt \ <br>
+>	--genome \ <br>
+>	--rel-check \ <br>
+>	--out rel <br>
