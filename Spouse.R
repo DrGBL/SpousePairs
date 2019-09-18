@@ -9,7 +9,7 @@ file3 <- as.character(args[2])
 #Main file
 input1 <- fread("file2")
 names(input1) <- c("ID", "Sex", "DoB", "Centre", "AccoType", "OwnRent","LengthOfTime",
-"NumberInHousehold","Vehicles","AliveF", "AgeDeathF", "AliveM", "AgeDeathM","HomeEW", "HomeNS")
+"NumberInHousehold","Vehicles", "HomeEW", "HomeNS")
 
 #List of potential spouses
 input2 <- fread("file3")
@@ -32,7 +32,7 @@ datacomplete <- data[which(data$AccoType > 0 & data$OwnRent > 0 & data$LengthOfT
 #UKB assessment centre, Accomodation type, Ownership status, Length of time in household, number in household, 
 #vehicles, home EW coordinate, home NS coordinate.
 
-criteria <- datacomplete[c(4:9,14,15)]
+criteria <- datacomplete[c(4:11)]
 
 #Identify criteria that are duplicated between different individuals
 duplicates <- duplicated(criteria)
