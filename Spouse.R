@@ -5,6 +5,7 @@ require(plyr)
 #Arguments
 file2 <- as.character(args[1])
 file3 <- as.character(args[2])
+outfile<-as.character(args[3])
 
 #Main file
 input1 <- fread("file2")
@@ -58,7 +59,7 @@ merge3 <- merge2[which(! merge2$Couple %in% duplicates2df$Couple), ]
 
 #Output as preliminary couples
 output<- data.table(FID=merge3$Couple, IID=merge3$ID)
-write.table(output, "preliminary-spouse-pairs.txt", quote=F, row.names=F)
+write.table(output, file=outfile, quote=F, row.names=F)
 
 
 
