@@ -1,5 +1,5 @@
 # SpousePairs
-Code for deriving spouse-pairs in UK Biobank
+Code for deriving a list of preliminary spouse-pairs in UK Biobank
 
 <b>Input</b>
 
@@ -21,13 +21,9 @@ Own or rent accommodation lived in (680-0.0) <br>
 Length of time at current address (699-0.0) <br>
 Number in household (709-0.0) <br>
 Number of vehicles in household (728-0.0) <br>
-Father still alive (1797-0.0) <br>
-Fathers age at death (1807-0.0) <br>
-Mother still alive (1835-0.0) <br>
-Mothers age at death (1845-0.0) <br>
 Home coordinates East-West (nearest km) (20074-0.0) <br>
 Home coordinates North-South (nearest km) (20075-0.0) <br>
 
-c) Genetic data <br>
+<b> Next step </b>
 
-<b> Output </b>
+We recommend using genetic data to remove preliminary pairs which are closely related. This can be done using PLINK!
