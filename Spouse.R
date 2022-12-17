@@ -1,3 +1,5 @@
+args = commandArgs(trailingOnly=TRUE)
+
 #Package requirements
 require(data.table)
 require(plyr)
@@ -8,12 +10,12 @@ file3 <- as.character(args[2])
 outfile<-as.character(args[3])
 
 #Main file
-input1 <- fread("file2")
+input1 <- fread(file2)
 names(input1) <- c("ID", "Sex", "DoB", "Centre", "AccoType", "OwnRent","LengthOfTime",
 "NumberInHousehold","Vehicles", "HomeEW", "HomeNS")
 
 #List of potential spouses
-input2 <- fread("file3")
+input2 <- fread(file3)
 names(input2) <- c("ID")
 
 #Restrict to potential spouses
@@ -24,8 +26,8 @@ data <- input1[which(input1$ID%in%input2$ID),]
 #and home coordinates as these will be used to derive spouse-pairs. 
 
 datacomplete <- data[which(data$AccoType > 0 & data$OwnRent > 0 & data$LengthOfTime > 0 & data$NumberInHousehold > 1
-			   & data$Vehicles > 0 & ! is.na(data$HomeEast)
-		           & ! is.na(data$HomeNorth) & ! is.na(data$LengthOfTime) 
+			   & data$Vehicles > 0 & ! is.na(data$HomeEW)
+		           & ! is.na(data$HomeNS) & ! is.na(data$LengthOfTime) 
 			   & ! is.na(data$NumberInHousehold)),]
 
 
@@ -33,7 +35,7 @@ datacomplete <- data[which(data$AccoType > 0 & data$OwnRent > 0 & data$LengthOfT
 #UKB assessment centre, Accomodation type, Ownership status, Length of time in household, number in household, 
 #vehicles, home EW coordinate, home NS coordinate.
 
-criteria <- datacomplete[c(4:11)]
+criteria <- datacomplete[,c(4:11)]
 
 #Identify criteria that are duplicated between different individuals
 duplicates <- duplicated(criteria)
@@ -44,7 +46,7 @@ criteriadf$Couple <- 1:nrow(criteriadf)
 
 #Merge the identifier numbers with the main data-set
 merge <- merge(datacomplete, criteriadf, 
-	       by=c("Centre", "AccoType", "OwnRent", "LengthOfTime", "NumberInHousehold", "Vehicles", "HomeEast", "HomeNorth"))
+	       by=c("Centre", "AccoType", "OwnRent", "LengthOfTime", "NumberInHousehold", "Vehicles", "HomeEW", "HomeNS"))
 
 #Count the number of individuals with identical information and restrict to couples only rather than trios etc
 count <- ddply(merge,.(Couple),nrow)
